@@ -1,0 +1,12 @@
+let year1 = 1900
+let year2 = 2000
+let year3 = 2024
+let year4 = 2026
+let result1 = (year1 % 400 == 0) || (year1 % 4 == 0 && year1 % 100 != 0)
+let result2 = (year2 % 400 == 0) || (year2 % 4 == 0 && year2 % 100 != 0)
+let result3 = (year3 % 400 == 0) || (year3 % 4 == 0 && year3 % 100 != 0)
+let result4 = (year4 % 400 == 0) || (year4 % 4 == 0 && year4 % 100 != 0)
+print(result1)
+print(result2)
+print(result3)
+print(result4)
