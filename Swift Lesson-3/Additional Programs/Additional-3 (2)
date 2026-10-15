@@ -1,0 +1,40 @@
+struct Counter {
+    var value = 0
+    mutating func increment() {
+        value += 1
+    }
+}
+class Box {
+    var value = 0
+    func increment() {
+        value += 1
+    }
+}
+var c = Counter()
+c.increment()
+print("Counter value:", c.value)
+let b = Box()
+b.increment()
+print("Box value:", b.value)
+let b1 = Box()
+let b2 = b1
+print("Same object:", b1 === b2)
+
+//Explanation
+//1. Line causing the compile error
+//let c = Counter()
+//c.increment()
+//The error occurs at c.increment() because c is declared using let, making the struct instance immutable.
+//2. How to fix it
+//var c = Counter()
+//c.increment()
+//Using var allows the mutating method to change the struct's stored property.
+//3. Why does the class version work?
+//let b = Box()
+//b.increment()
+//Classes are reference types. Although b is a constant reference, the object's value property can still change.
+//4. What does === mean?
+//let b1 = Box()
+//let b2 = b1
+//print(b1 === b2)
+//It prints true because both constants refer to the same class instance.
