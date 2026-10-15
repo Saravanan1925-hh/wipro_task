@@ -1,0 +1,32 @@
+import Foundation
+var subjects = ["Swift", "UIKit", "SwiftUI"]
+subjects.append("Networking")
+subjects.insert("Testing", at: 1)
+if let index = subjects.firstIndex(of: "UIKit") {
+    subjects.remove(at: index)
+}
+print("Sorted subjects:", subjects.sorted())
+var registered: Set<String> = ["Arun", "Bala", "Charan"]
+registered.insert("Arun")
+registered.insert("David")
+print("Registered students:", registered)
+print("Number of registered students:", registered.count)
+var marks: [String: Int] = [
+    "Arun": 85,
+    "Bala": 90,
+    "Charan": 78
+]
+marks["David"] = 95      
+marks["Bala"] = 92       
+if let mark = marks["Ravi"] {
+    print("Ravi's mark:", mark)
+} else {
+    print("Ravi: Not found")
+}
+for name in marks.keys.sorted() {
+    print("\(name): \(marks[name]!)")
+}
+if let highest = marks.max(by: { $0.value < $1.value }) {
+    print("Highest mark:", highest.value)
+    print("Student:", highest.key)
+}

@@ -1,0 +1,15 @@
+let students = [
+    "Arun": 85,
+    "Bala": 90,
+    "Charan": 78,
+    "David": 88,
+    "Ezhil": 92
+]
+
+let name = "Bala"
+
+if let mark = students[name] {
+    print("Mark:", mark)
+} else {
+    print("Not found")
+}
